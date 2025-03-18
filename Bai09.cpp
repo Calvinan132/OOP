@@ -51,8 +51,8 @@ bool sotietkiem::ktloai()
 }
 bool sotietkiem::ktten()
 {
-    if(loai.length() < 1 || loai.length() > 30) return 0;
-    for(char x : ma)
+    if(ten.length() < 1 || ten.length() > 30) return 0;
+    for(char x : ten)
     {
         if(ispunct(x) || isdigit(x)) return 0;
     }
@@ -167,7 +167,7 @@ ostream& operator<<(ostream &os,sotietkiem x)
     os << "Ho ten khach hang: " << x.ten << endl;
     os << "So cmnd: " << x.cmnd << endl;
     os << "Ngay mo so: " << x.ngaymo << endl;
-    os << "So tien: " << x.tiengui << endl;
+    os << "So tien: " <<fixed << setprecision(2) <<x.tiengui << endl;
     os << "------------------------ \n" ;
     return os;
 }
@@ -391,7 +391,7 @@ int main()
             cin >> sl;
             for(int i = 0;i<sl;i++)
             {
-                if(sl != 0) cin.ignore();
+                cin.ignore();
                 sotietkiem tmp;
                 cin >> tmp;
                 ds.push_back(tmp);
